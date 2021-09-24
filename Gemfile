@@ -35,12 +35,13 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'pry'
+  gem 'rspec-rails', '~> 4.0.1'
   gem 'capybara'
   gem 'launchy'
-  gem 'pry'
   gem 'simplecov'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'orderly'
 end
 
 group :development do
