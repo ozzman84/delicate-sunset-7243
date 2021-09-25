@@ -15,6 +15,7 @@ describe 'Airline Show Page' do
       @ron = Passenger.create!(name: 'Ron', age: 27)
       @jen = Passenger.create!(name: 'Jen', age: 27)
       @john_flytoolow = FlightPassenger.create!(flight_id: @flytoolow.id, passenger_id: @john.id)
+      @john_lookmanohands = FlightPassenger.create!(flight_id: @flytoolow.id, passenger_id: @john.id)
       @steve_flytoolow = FlightPassenger.create!(flight_id: @flytoolow.id, passenger_id: @steve.id)
       @eddie_lookmanohands = FlightPassenger.create!(flight_id: @lookmanohands.id, passenger_id: @eddie.id)
       @ron_takethewheel = FlightPassenger.create!(flight_id: @takethewheel.id, passenger_id: @ron.id)
@@ -27,6 +28,7 @@ describe 'Airline Show Page' do
 
         @freefall.adult_passengers.each do |passenger|
           expect(page).to have_content(passenger.name)
+          expect(@freefall.adult_passengers.count).to eq(3)
         end
 
         expect(page).not_to have_content(@jen.name)

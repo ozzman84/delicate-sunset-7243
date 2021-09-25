@@ -3,6 +3,6 @@ class Airline < ApplicationRecord
   has_many :passengers, through: :flights
 
   def adult_passengers
-    passengers.where('age > ?', 17)
+    passengers.where('age > ?', 17).uniq
   end
 end
